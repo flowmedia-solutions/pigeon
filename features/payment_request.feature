@@ -41,7 +41,7 @@ Feature: Payment Request
 			  'DeliveryCountry' => 'GB'
       }
       """
-    When we call PaymentRequest with the hash below, it should pass
+    When we call payment_request with the hash below, it should pass
       """
       {
 			  :amount => 1234,

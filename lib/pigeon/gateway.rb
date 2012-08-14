@@ -11,5 +11,17 @@ module Pigeon
       
       request.perform
     end
+    
+    def self.threeds_validation(req)
+      if req.is_a? Hash
+        request = ThreedsValidationRequest.new req
+      elsif req.kind_of? ThreedsValidationRequest
+        request = req
+      else
+        raise ArgumentException, 'You must pass a Hash or ThreedsValidationRequest to this method.'
+      end
+      
+      request.perform
+    end
   end
 end 

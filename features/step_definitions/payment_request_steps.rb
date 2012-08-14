@@ -10,6 +10,6 @@ Given /^we stub perform_post to expect the url "(.*?)" and data:$/ do |url, data
   Pigeon::Request.any_instance.should_receive(:perform_post).with(url, eval(data))
 end
 
-When /^we call PaymentRequest with the hash below, it should pass$/ do |green|
+When /^we call payment_request with the hash below, it should pass$/ do |green|
   Pigeon::Gateway.payment_request eval(green)
 end
