@@ -18,14 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-Pigeon.configure(vendor: 'flowmedia', mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete')
-Pigeon.test? # => true
-response = Pigeon::Gateway.payment(
-  :vendor_tx_code => 'test',
-  :amount => 1234 # in pence
-  # ...
-) # => PaymentResponse
-puts "We got ourselves some monies!" if response.success?
+    Pigeon.configure(vendor: 'flowmedia', mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete')
+    Pigeon.test? # => true
+    response = Pigeon::Gateway.payment(
+      :vendor_tx_code => 'test',
+      :amount => 1234 # in pence
+      # ...
+    ) # => PaymentResponse
+    puts "We got ourselves some monies!" if response.success?
 
 ## Contributing
 
