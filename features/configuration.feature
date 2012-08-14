@@ -3,7 +3,7 @@ Feature: Module Configuration
   Developers should be able to configure the module for use
 
   Scenario: Configure with valid details
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
@@ -28,28 +28,28 @@ Feature: Module Configuration
       """
 
   Scenario: Configure without vendor
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
     Then a ConfigurationException should be raised with the message "You must supply :vendor when configuring Pigeon."
 
   Scenario: Configure with an incorrect mode
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :break, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
     Then a ConfigurationException should be raised with the message "You must supply a valid :mode when configuring Pigeon."
 
   Scenario: Configure without threeds_callback_url
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :simulate }
       """
     Then a ConfigurationException should be raised with the message "You must supply :threeds_callback_url when configuring Pigeon."
 
   Scenario: Check mode methods respect configured mode (default)
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
@@ -58,7 +58,7 @@ Feature: Module Configuration
     And live? should return false
 
   Scenario: Check mode methods respect configured mode (simulate)
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :simulate, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
@@ -67,7 +67,7 @@ Feature: Module Configuration
     And live? should return false
 
   Scenario: Check mode methods respect configured mode (test)
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :test, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
@@ -76,7 +76,7 @@ Feature: Module Configuration
     And live? should return false
 
   Scenario: Check mode methods respect configured mode (live)
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
@@ -85,7 +85,7 @@ Feature: Module Configuration
     And live? should return true
 
   Scenario: Check URL methods respect configured mode (simulate)
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :simulate, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
@@ -94,7 +94,7 @@ Feature: Module Configuration
     And paypal_url should return "https://test.sagepay.com/Simulator/paypalcomplete.asp"
 
   Scenario: Check URL methods respect configured mode (test)
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :test, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
@@ -103,7 +103,7 @@ Feature: Module Configuration
     And paypal_url should return "https://test.sagepay.com/gateway/service/complete.vsp"
 
   Scenario: Check URL methods respect configured mode (live)
-    When I configure Pigeon with the hash:
+    When I configure Pigeon with the possibly erroneous hash:
       """
       { vendor: 'flowmedia', mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """

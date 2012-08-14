@@ -3,7 +3,7 @@ module Pigeon
     attr_reader :plain, :to_hash, :success
     def initialize(resp)
       @underlying = resp
-      @plain = @underlying.body
+      @plain = @underlying.nil? ? '' : @underlying.body
     end
     
     def success?
@@ -11,7 +11,7 @@ module Pigeon
     end
     
     def to_hash
-      Hash[@underlying.lines.map {|line| line.strip.split '=', 2 }]
+      Hash[@plain.lines.map {|line| line.strip.split '=', 2 }]
     end
   end
 end

@@ -8,12 +8,12 @@ module Pigeon
       @postdata = {}
     end
     
-    def perform_post
-      self.class.post @url, query: @postdata
+    def perform_post(url, data)
+      self.class.post url, query: data
     end
     
     def perform
-      Response.new perform_post
+      Response.new(perform_post @url, @postdata)
     end
     
     def valid?

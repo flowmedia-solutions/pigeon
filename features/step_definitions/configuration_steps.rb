@@ -1,4 +1,4 @@
-When /^I configure Pigeon with the hash:$/ do |config|
+When /^I configure Pigeon with the possibly erroneous hash:$/ do |config|
   begin
     @config_response = Pigeon.configure eval(config)
   rescue Exception => e

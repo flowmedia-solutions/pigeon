@@ -55,42 +55,43 @@ module Pigeon
   #
   # @return [Hash] the current module configuration.
   def self.config
+    raise ConfigurationException, 'You must call Pigeon.configure before using this module.' unless @@config
     @@config
   end
 
   # Returns whether the gateway will operate against the SagePay Simulator.
   def self.simulate?
-    @@config[:mode] == :simulate
+    self.config[:mode] == :simulate
   end
   
   # Returns whether the gateway will operate against the SagePay test system.
   def self.test?
-    @@config[:mode] == :test
+    self.config[:mode] == :test
   end
   
   # Returns whether the gateway will operate against the SagePay live servers.
   def self.live?
-    @@config[:mode] == :live
+    self.config[:mode] == :live
   end
   
   # Returns the URL the gateway will use for transaction registration.
   #
   # @return [String] the URL the gateway will use for transaction registration.
   def self.register_url
-    @@config["#{@@config[:mode]}_register_url".to_sym]
+    self.config["#{@@config[:mode]}_register_url".to_sym]
   end
   
   # Returns the URL the gateway will use for _SagePay_ 3DS callbacks.
   #
   # @return [String] the URL the gateway will use for _SagePay_ 3DS callbacks.
   def self.threeds_url
-    @@config["#{@@config[:mode]}_threeds_url".to_sym]
+    self.config["#{@@config[:mode]}_threeds_url".to_sym]
   end
   
   # Returns the URL the gateway will use for PayPal transaction completion.
   #
   # @return [String] the URL the gateway will use for PayPal transaction completion.
   def self.paypal_url
-    @@config["#{@@config[:mode]}_paypal_url".to_sym]
+    self.config["#{@@config[:mode]}_paypal_url".to_sym]
   end
 end
