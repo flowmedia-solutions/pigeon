@@ -21,7 +21,7 @@ Or install it yourself as:
     # require 'rubygems'
     require 'pigeon'
     
-    Pigeon.configure(vendor: 'flowmedia', mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete')
+    Pigeon.configure(vendor: 'flowmedia', mode: :test, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete')
     Pigeon.test? # => true
     response = Pigeon::Gateway.payment_request(
       :vendor_tx_code => 'test',

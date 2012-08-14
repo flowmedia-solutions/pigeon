@@ -20,3 +20,7 @@ end
 Then /^the response should match the hash:$/ do |green|
   @response.to_hash.should eq eval(green)
 end
+
+Then /^the response should require 3DS$/ do
+  @response.requires_threeds?.should be_true
+end
