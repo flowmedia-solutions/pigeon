@@ -11,7 +11,7 @@ module Pigeon
     end
     
     def to_hash
-      Hash[@plain.lines.map {|line| line.strip.split '=', 2 }]
+      @hash ||= Hash[@plain.lines.map {|line| line.strip.split '=', 2 }]
     end
   end
 end

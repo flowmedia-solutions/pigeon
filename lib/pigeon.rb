@@ -5,6 +5,7 @@ require 'pigeon/transaction_registration_request'
 require 'pigeon/payment_request'
 #require 'pigeon/refund_request'
 require 'pigeon/response'
+require 'pigeon/payment_response'
 require 'pigeon/exceptions'
 
 module Pigeon

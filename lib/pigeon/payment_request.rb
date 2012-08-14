@@ -15,5 +15,9 @@ module Pigeon
         @postdata.delete :card_type
       end
     end
+    
+    def perform
+      PaymentResponse.new(perform_post @url, @postdata)
+    end
   end
 end

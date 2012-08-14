@@ -7,7 +7,6 @@ Given /^Pigeon is configured to return the register_url "(.*?)"$/ do |url|
 end
 
 Given /^we stub perform_post to expect the url "(.*?)" and data:$/ do |url, data|
-  p 'stub'
   Pigeon::Request.any_instance.should_receive(:perform_post).with(url, eval(data))
 end
 
