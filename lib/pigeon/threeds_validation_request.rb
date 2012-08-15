@@ -5,5 +5,9 @@ module Pigeon
       @postdata.merge! data
       @url = Pigeon.threeds_url
     end
+    
+    def perform
+      ThreedsValidationResponse.new(perform_post @url, @postdata)
+    end
   end
 end
