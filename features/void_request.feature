@@ -22,7 +22,7 @@ Feature: Void a Transaction
         'TxAuthNo' => '34876435894850937598357598375'
       }
       """
-    When we call threeds_validation with the hash below, it should pass
+    When we call void_request with the hash below, it should pass
       """
       {
         'VendorTxCode' => 'original-tx',
@@ -40,7 +40,7 @@ Feature: Void a Transaction
       Status=OK
       StatusDetail=Transaction voided.
       """
-    When we call threeds_validation with the hash:
+    When we call void_request with the hash:
       """
       {
         'VendorTxCode' => 'original-tx',

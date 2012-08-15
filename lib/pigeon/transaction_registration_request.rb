@@ -1,11 +1,7 @@
 module Pigeon
-  class TransactionRegistrationRequest < Request
+  class TransactionRegistrationRequest < SharedRequest
     def initialize
       super
-      @postdata.merge!({
-        'VPSProtocol' => Pigeon.config[:vps_protocol],
-        'Vendor' => Pigeon.config[:vendor]
-      })
       @url = Pigeon.register_url
     end
     

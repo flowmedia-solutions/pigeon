@@ -1,5 +1,5 @@
 module Pigeon
-  class ThreedsValidationResponse < Response
+  class OkableResponse < Response
     def success?
       super && to_hash['Status'] == 'OK'
     end

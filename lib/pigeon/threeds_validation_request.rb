@@ -7,7 +7,7 @@ module Pigeon
     end
     
     def perform
-      ThreedsValidationResponse.new(perform_post @url, @postdata)
+      OkableResponse.new(perform_post @url, @postdata)
     end
   end
 end

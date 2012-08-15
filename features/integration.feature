@@ -1,3 +1,4 @@
+@ignore
 Feature: Test against the simulator
   In order to check HTTP requests work
   Testers should be able to run against the SagePay simulator

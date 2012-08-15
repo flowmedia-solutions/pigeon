@@ -1,13 +1,15 @@
 require "pigeon/version"
 require 'pigeon/gateway'
 require 'pigeon/request'
+require 'pigeon/shared_request'
 require 'pigeon/transaction_registration_request'
 require 'pigeon/payment_request'
 require 'pigeon/threeds_validation_request'
-#require 'pigeon/refund_request'
+require 'pigeon/void_request'
+require 'pigeon/refund_request'
 require 'pigeon/response'
 require 'pigeon/payment_response'
-require 'pigeon/threeds_validation_response'
+require 'pigeon/okable_response'
 require 'pigeon/exceptions'
 
 module Pigeon
