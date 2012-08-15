@@ -1,6 +1,6 @@
-Feature: 3DS Validation
-  In order to capture monies from a 3DS-enrolled credit card
-  Developers should be able to process their callback postdata against SagePay
+Feature: Void a Transaction
+  In order to void a transaction and avoid bank charges
+  Developers should be able to process their void request against SagePay
 
   Background:
     Given I configure Pigeon with the hash:

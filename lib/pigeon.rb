@@ -22,7 +22,7 @@ module Pigeon
   # For PayPal support, you must supply :paypal_callback_url.
   #
   # == Example usage:
-  #   Pigeon.configure(vendor: 'flowmedia', mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete')
+  #   Pigeon.configure(vendor: 'flowmedia', mode: :test, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete')
   #   Pigeon.test? # => true
   #   response = Pigeon::Gateway.payment(
   #     :vendor_tx_code => 'test',

@@ -5,7 +5,7 @@ Feature: Payment Request
   Background:
     Given I configure Pigeon with the hash:
       """
-      { vendor: 'flowmedia', mode: :live, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
+      { vendor: 'flowmedia', mode: :test, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
   
   Scenario: Submit a valid payment request, checking HTTP post, minimum config, without 3DS
