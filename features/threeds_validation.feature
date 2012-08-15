@@ -20,7 +20,7 @@ Feature: 3DS Validation
     When we call threeds_validation with the hash below, it should pass
       """
       {
-			  'MD' => 'aaa45678901234567890123456789012345',
+        'MD' => 'aaa45678901234567890123456789012345',
         'PARes' => 'SSBmdWNraW5nIGhhdGUgU2FnZVBheSwgaXQncyBhIHBpbGUgb2Ygc2hpdC4NCg0KV2VsbCBkb25lIGZvciBkZWNvZGluZyB0aGlzLCB5b3UgbXVzdCBoYXZlIGJlZW4gYm9yZWQu'
       }
       """
@@ -45,7 +45,7 @@ Feature: 3DS Validation
     When we call threeds_validation with the hash:
       """
       {
-			  'MD' => 'aaa45678901234567890123456789012345',
+        'MD' => 'aaa45678901234567890123456789012345',
         'PARes' => 'SSBmdWNraW5nIGhhdGUgU2FnZVBheSwgaXQncyBhIHBpbGUgb2Ygc2hpdC4NCg0KV2VsbCBkb25lIGZvciBkZWNvZGluZyB0aGlzLCB5b3UgbXVzdCBoYXZlIGJlZW4gYm9yZWQu'
       }
       """
