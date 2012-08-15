@@ -9,7 +9,7 @@ module Pigeon
     end
     
     def perform_post(url, data)
-      self.class.post url, query: data
+      self.class.post url, body: data
     end
     
     def perform

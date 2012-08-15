@@ -5,8 +5,11 @@ Given /^we stub perform_post to return:$/ do |string|
   Pigeon::Request.any_instance.should_receive(:perform_post).and_return(resp)
 end
 
+require 'pp'
+
 When /^we call PaymentRequest with the hash:$/ do |green|
   @response = Pigeon::Gateway.payment_request eval(green)
+  pp @response
 end
 
 Then /^the response should be successful$/ do
