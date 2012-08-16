@@ -18,12 +18,18 @@ Feature: Module Configuration
         simulate_register_url: 'https://test.sagepay.com/Simulator/VSPDirectGateway.asp',
         simulate_threeds_url: 'https://test.sagepay.com/Simulator/VSPDirectCallback.asp',
         simulate_paypal_url: 'https://test.sagepay.com/Simulator/paypalcomplete.asp',
+        simulate_void_url: 'https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorVoidTx',
+        simulate_refund_url: 'https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorRefundTx',
         test_register_url: 'https://live.sagepay.com/gateway/service/vspdirect-register.vsp',
         test_threeds_url: 'https://test.sagepay.com/gateway/service/direct3dcallback.vsp',
         test_paypal_url: 'https://test.sagepay.com/gateway/service/complete.vsp',
+        test_void_url: 'https://test.sagepay.com/gateway/service/void.vsp',
+        test_refund_url: 'https://test.sagepay.com/gateway/service/refund.vsp',
         live_register_url: 'https://live.sagepay.com/gateway/service/vspdirect-register.vsp',
         live_threeds_url: 'https://live.sagepay.com/gateway/service/direct3dcallback.vsp',
-        live_paypal_url: 'https://live.sagepay.com/gateway/service/complete.vsp'
+        live_paypal_url: 'https://live.sagepay.com/gateway/service/complete.vsp',
+        live_void_url: 'https://live.sagepay.com/gateway/service/void.vsp',
+        live_refund_url: 'https://live.sagepay.com/gateway/service/refund.vsp'
       }
       """
 
@@ -92,6 +98,8 @@ Feature: Module Configuration
     Then register_url should return "https://test.sagepay.com/Simulator/VSPDirectGateway.asp"
     And threeds_url should return "https://test.sagepay.com/Simulator/VSPDirectCallback.asp"
     And paypal_url should return "https://test.sagepay.com/Simulator/paypalcomplete.asp"
+    And void_url should return "https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorVoidTx"
+    And refund_url should return "https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorRefundTx"
 
   Scenario: Check URL methods respect configured mode (test)
     When I configure Pigeon with the possibly erroneous hash:
@@ -101,6 +109,8 @@ Feature: Module Configuration
     Then register_url should return "https://live.sagepay.com/gateway/service/vspdirect-register.vsp"
     And threeds_url should return "https://test.sagepay.com/gateway/service/direct3dcallback.vsp"
     And paypal_url should return "https://test.sagepay.com/gateway/service/complete.vsp"
+    And void_url should return "https://test.sagepay.com/gateway/service/void.vsp"
+    And refund_url should return "https://test.sagepay.com/gateway/service/refund.vsp"
 
   Scenario: Check URL methods respect configured mode (live)
     When I configure Pigeon with the possibly erroneous hash:
@@ -110,3 +120,5 @@ Feature: Module Configuration
     Then register_url should return "https://live.sagepay.com/gateway/service/vspdirect-register.vsp"
     And threeds_url should return "https://live.sagepay.com/gateway/service/direct3dcallback.vsp"
     And paypal_url should return "https://live.sagepay.com/gateway/service/complete.vsp"
+    And void_url should return "https://live.sagepay.com/gateway/service/void.vsp"
+    And refund_url should return "https://live.sagepay.com/gateway/service/refund.vsp"

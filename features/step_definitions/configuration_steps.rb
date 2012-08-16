@@ -42,3 +42,11 @@ end
 Then /^paypal_url should return "(.*?)"$/ do |url|
   Pigeon.paypal_url.should eq url
 end
+
+Then /^void_url should return "(.*?)"$/ do |url|
+  Pigeon.void_url.should eq url
+end
+
+Then /^refund_url should return "(.*?)"$/ do |url|
+  Pigeon.refund_url.should eq url
+end

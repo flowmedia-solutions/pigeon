@@ -27,10 +27,10 @@ module Pigeon
     def self.void_request(req)
       if req.is_a? Hash
         request = VoidRequest.new req
-      elsif req.kind_of? PaymentRequest
+      elsif req.kind_of? VoidRequest
         request = req
       else
-        raise ArgumentException, 'You must pass a Hash or PaymentRequest to this method.'
+        raise ArgumentException, 'You must pass a Hash or VoidRequest to this method.'
       end
       
       request.perform
@@ -39,10 +39,10 @@ module Pigeon
     def self.refund_request(req)
       if req.is_a? Hash
         request = RefundRequest.new req
-      elsif req.kind_of? PaymentRequest
+      elsif req.kind_of? RefundRequest
         request = req
       else
-        raise ArgumentException, 'You must pass a Hash or PaymentRequest to this method.'
+        raise ArgumentException, 'You must pass a Hash or RefundRequest to this method.'
       end
       
       request.perform

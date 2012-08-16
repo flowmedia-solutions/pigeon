@@ -1,7 +1,10 @@
 module Pigeon
   class VoidRequest < SharedRequest
-    def initialize
-      super
+    def initialize(data = {})
+      super()
+      @postdata.merge!({
+        'TxType' => 'VOID'
+      }).merge!(data)
       @url = Pigeon.void_url
     end
 

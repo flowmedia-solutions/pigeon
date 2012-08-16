@@ -1,7 +1,10 @@
 module Pigeon
-  class VoidRequest < SharedRequest
-    def initialize
-      super
+  class RefundRequest < SharedRequest
+    def initialize(data = {})
+      super()
+      @postdata.merge!({
+        'TxType' => 'REFUND'
+      }).merge!(data)
       @url = Pigeon.refund_url
     end
 

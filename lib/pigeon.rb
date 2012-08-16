@@ -43,12 +43,18 @@ module Pigeon
       simulate_register_url: 'https://test.sagepay.com/Simulator/VSPDirectGateway.asp',
       simulate_threeds_url: 'https://test.sagepay.com/Simulator/VSPDirectCallback.asp',
       simulate_paypal_url: 'https://test.sagepay.com/Simulator/paypalcomplete.asp',
+      simulate_void_url: 'https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorVoidTx',
+      simulate_refund_url: 'https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorRefundTx',
       test_register_url: 'https://live.sagepay.com/gateway/service/vspdirect-register.vsp',
       test_threeds_url: 'https://test.sagepay.com/gateway/service/direct3dcallback.vsp',
       test_paypal_url: 'https://test.sagepay.com/gateway/service/complete.vsp',
+      test_void_url: 'https://test.sagepay.com/gateway/service/void.vsp',
+      test_refund_url: 'https://test.sagepay.com/gateway/service/refund.vsp',
       live_register_url: 'https://live.sagepay.com/gateway/service/vspdirect-register.vsp',
       live_threeds_url: 'https://live.sagepay.com/gateway/service/direct3dcallback.vsp',
-      live_paypal_url: 'https://live.sagepay.com/gateway/service/complete.vsp'
+      live_paypal_url: 'https://live.sagepay.com/gateway/service/complete.vsp',
+      live_void_url: 'https://live.sagepay.com/gateway/service/void.vsp',
+      live_refund_url: 'https://live.sagepay.com/gateway/service/refund.vsp'
     }.merge(opts)
     raise ConfigurationException, 'You must supply a valid :mode when configuring Pigeon.' unless [:simulate, :test, :live].include? @@config[:mode]
     raise ConfigurationException, 'You must supply :vendor when configuring Pigeon.' unless @@config[:vendor]
@@ -98,5 +104,19 @@ module Pigeon
   # @return [String] the URL the gateway will use for PayPal transaction completion.
   def self.paypal_url
     self.config["#{@@config[:mode]}_paypal_url".to_sym]
+  end
+  
+  # Returns the URL the gateway will use for PayPal transaction voiding.
+  #
+  # @return [String] the URL the gateway will use for PayPal transaction voiding.
+  def self.void_url
+    self.config["#{@@config[:mode]}_void_url".to_sym]
+  end
+  
+  # Returns the URL the gateway will use for PayPal transaction refunds.
+  #
+  # @return [String] the URL the gateway will use for PayPal transaction refunds.
+  def self.refund_url
+    self.config["#{@@config[:mode]}_refund_url".to_sym]
   end
 end
