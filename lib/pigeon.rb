@@ -45,7 +45,7 @@ module Pigeon
       simulate_paypal_url: 'https://test.sagepay.com/Simulator/paypalcomplete.asp',
       simulate_void_url: 'https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorVoidTx',
       simulate_refund_url: 'https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorRefundTx',
-      test_register_url: 'https://live.sagepay.com/gateway/service/vspdirect-register.vsp',
+      test_register_url: 'https://test.sagepay.com/gateway/service/vspdirect-register.vsp',
       test_threeds_url: 'https://test.sagepay.com/gateway/service/direct3dcallback.vsp',
       test_paypal_url: 'https://test.sagepay.com/gateway/service/complete.vsp',
       test_void_url: 'https://test.sagepay.com/gateway/service/void.vsp',
