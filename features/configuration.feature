@@ -20,7 +20,7 @@ Feature: Module Configuration
         simulate_paypal_url: 'https://test.sagepay.com/Simulator/paypalcomplete.asp',
         simulate_void_url: 'https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorVoidTx',
         simulate_refund_url: 'https://test.sagepay.com/Simulator/VSPServerGateway.asp?Service=VendorRefundTx',
-        test_register_url: 'https://live.sagepay.com/gateway/service/vspdirect-register.vsp',
+        test_register_url: 'https://test.sagepay.com/gateway/service/vspdirect-register.vsp',
         test_threeds_url: 'https://test.sagepay.com/gateway/service/direct3dcallback.vsp',
         test_paypal_url: 'https://test.sagepay.com/gateway/service/complete.vsp',
         test_void_url: 'https://test.sagepay.com/gateway/service/void.vsp',
@@ -106,7 +106,7 @@ Feature: Module Configuration
       """
       { vendor: 'flowmedia', mode: :test, threeds_callback_url: 'http://www.cheeseandbiscuits.com/payment/complete' }
       """
-    Then register_url should return "https://live.sagepay.com/gateway/service/vspdirect-register.vsp"
+    Then register_url should return "https://test.sagepay.com/gateway/service/vspdirect-register.vsp"
     And threeds_url should return "https://test.sagepay.com/gateway/service/direct3dcallback.vsp"
     And paypal_url should return "https://test.sagepay.com/gateway/service/complete.vsp"
     And void_url should return "https://test.sagepay.com/gateway/service/void.vsp"
