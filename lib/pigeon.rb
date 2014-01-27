@@ -37,6 +37,7 @@ module Pigeon
   # @raise [ConfigurationException] if the +:vendor+, +:mode+ or +:threeds_callback_url+ aren't set.
   # @return [Hash] the current module configuration.
   def self.configure(opts)
+    Rails.logger.fatal "Testing output of config from pigeon &&&&&&&&&&&&&&&&&&&&&&&&&"
     @@config = {
       vps_protocol: '2.23',
       mode: :simulate,
