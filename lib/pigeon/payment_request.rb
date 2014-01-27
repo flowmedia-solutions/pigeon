@@ -17,6 +17,7 @@ module Pigeon
     end
     
     def perform
+      Rails.logger.fatal "********** Payment_request URL #{@url}"
       PaymentResponse.new(perform_post @url, @postdata)
     end
   end
